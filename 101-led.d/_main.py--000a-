@@ -1,0 +1,15 @@
+print("maine pie"), print("  Allagash.");
+
+import digitalio
+from board import *
+
+pin = digitalio.DigitalInOut(D13)
+print(pin.value)
+pin.switch_to_output(D13)
+
+# main.pin.value = False
+# main.pin.value = True
+# main.pin.value = False
+
+pin.value = False
+
