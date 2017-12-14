@@ -17,6 +17,24 @@ lis3dh = adafruit_lis3dh.LIS3DH_I2C(i2c, address=25)
 # Set range of accelerometer (can be RANGE_2_G, RANGE_4_G, RANGE_8_G or RANGE_16_G).
 lis3dh.range = adafruit_lis3dh.RANGE_2_G
 
+print("r000ac")
+print(" ")
+print(" ")
+print("Model aircraft flight.")
+print(" ")
+print("Hold the CPX level with the USB port to the left,")
+print("at the 9 o'clock position, and the two pushbuttons")
+print("aligned to the direction of flight.")
+print(" ")
+print("x is pitch.  y is roll.")
+print(" ")
+print("The sign of z tells you if you are inverted or not;")
+print("the x and y axes cannot tell you this, even in com-")
+print("bination with one another.")
+print(" ")
+print(" ")
+
+time.sleep(2) # give time to read the intro (this is of course optional)
 # Loop forever printing accelerometer values
 while True:
     # Read accelerometer values (in m / s ^ 2).  Returns a 3-tuple of x, y,
@@ -32,6 +50,15 @@ while True:
     x = 1000 * x
     y = 1000 * y
     z = 1000 * z
+
+
+    # Columnar formatting
+
+    # The significant digits should not shift left or right
+
+    # (columnar comparison should be valid in successive iteration)
+
+    # See: https://docs.python.org/3/library/string.html#formatspec
 
     # print('x = {}G, y = {}G, z = {}G'.format(x / 9.806, y / 9.806, z / 9.806))
 
@@ -57,7 +84,9 @@ while True:
     # print('x = {:> 5.0f}    y = {:> 5.0f}    z = {:> 5.0f}'.format(x / 9.806, y / 9.806, z / 9.806))
 
     # That was beautiful.  A bit more column separation:
-    print('x = {:> 5.0f}      y = {:> 5.0f}      z = {:> 5.0f}'.format(x / 9.806, y / 9.806, z / 9.806))
+    # print('x = {:> 5.0f}      y = {:> 5.0f}      z = {:> 5.0f}'.format(x / 9.806, y / 9.806, z / 9.806))
+    # print('pitch = {:>+5.0f}       roll = {:>+5.0f}        inv = {:>+5.0f}'.format(x / 9.806, y / 9.806, z / 9.806))
+    print('  pitch = {:>+5.0f}       roll = {:>+5.0f}        inv = {:>+5.0f}'.format(x / 9.806, y / 9.806, z / 9.806))
 
    # print("   ")
 
