@@ -29,11 +29,39 @@ while True:
 # z of 1.0.  Flipped over onto the component side (now
 # face-down) and it's x=0 y=0 z=-1.0.
 
-    x = 100 * x
-    y = 100 * y
-    z = 100 * z
+    x = 1000 * x
+    y = 1000 * y
+    z = 1000 * z
 
-    print('x = {}G, y = {}G, z = {}G'.format(x / 9.806, y / 9.806, z / 9.806))
+    # print('x = {}G, y = {}G, z = {}G'.format(x / 9.806, y / 9.806, z / 9.806))
+
+    # print('{:+8,d}'.format(x / 9.806))
+
+    # print('{:+8,e}'.format(x / 9.806)) # works but not desired
+    # print('{:+4,f}'.format(x / 9.806))
+    # print('{: 4.2g}'.format(x / 9.806))
+    # print('{:< 4.2g}'.format(x / 9.806)) # works but not desired
+    # print('{:> 4.2f}'.format(x / 9.806))
+    # print('{:> 4.2g}'.format(x / 9.806))
+    # print('{:>.4f}'.format(x / 9.806))
+    # print('{:> .4f}'.format(x / 9.806)) # the four means 4 decimal places past the d.p.
+    # print('{:> .0f}'.format(x / 9.806))  # the zero means nothing after the decimal point
+    # print('{:> .0f}'.format(x / 9.806), "    x")
+
+
+    # print('{:> 4.0f}'.format(x / 9.806), "    x")  # Exactly as desired.  Or close.
+    # print('x = {}G,       y = {}G,       z = {}G'      .format(x / 9.806, y / 9.806, z / 9.806))
+    # print('x = {:> 4.0f}    y = {:> 4.0f}    z = {:> 4.0f}'.format(x / 9.806, y / 9.806, z / 9.806))
+
+    # That was pretty good.  When it went over 1,000 it broke.  Replace the 4 with a 5:
+    # print('x = {:> 5.0f}    y = {:> 5.0f}    z = {:> 5.0f}'.format(x / 9.806, y / 9.806, z / 9.806))
+
+    # That was beautiful.  A bit more column separation:
+    print('x = {:> 5.0f}      y = {:> 5.0f}      z = {:> 5.0f}'.format(x / 9.806, y / 9.806, z / 9.806))
+
+   # print("   ")
+
+
 
 
 # x axis goes thru USB connector and its wire
@@ -69,3 +97,4 @@ while True:
 
     # Small delay to keep things responsive but give time for interrupt processing.
     time.sleep(0.1)
+    time.sleep(0.4)
