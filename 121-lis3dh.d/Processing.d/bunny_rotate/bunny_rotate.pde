@@ -54,10 +54,11 @@ public void setup()
   frameRate(30);
   model = new OBJModel(this);
   model.load("bunny.obj");
-  model.scale(20);
+  model.scale(34);
+
+
   // bunny = loadShape("bunny.obj");
   
-
 
 // 30   size(640, 480, OPENGL);
 // 31   frameRate(30);
@@ -105,14 +106,14 @@ setSerialPort(serialList.getSelectedText());
  
 void draw()
 {
-  background(0);
-  lights();
+  background(33, 74, 101);
+  // lights();
 
   // Simple 3 point lighting for dramatic effect.
   // Slightly red light in upper right, slightly blue light in upper left, and white light from behind.
-  //   pointLight(255, 200, 200,  400, 400,  500);
-  //   pointLight(200, 200, 255, -400, 400,  500);
-  //   pointLight(255, 255, 255,    0,   0, -500);
+     pointLight(255, 200, 200,  400, 400,  500);
+     pointLight(200, 200, 255, -400, 400,  500);
+     pointLight(255, 255, 255,    0,   0, -500);
   
   // Move bunny from 0,0 in upper left corner to roughly center of screen.
 
@@ -121,9 +122,6 @@ void draw()
   // translate(960, 540, 610);  // establishes observing camera's location
   
   // ------------------------------------------
-  
-  
-  
   // translate(701, 501, 601);
   
   translate(900, 600, 200);
@@ -144,25 +142,26 @@ void draw()
 
   //  rotateZ(1.2);  // odd result for chair
   //  rotateZ(3.17); // chair flipped upside down, with other effects, perhaps
-   rotateZ(yaw);
+   rotateZ(yaw+3.1415-1);
   // pre-chair (for rocket):
   // rotateX((-1* (1.6 * pitch)+(3+1.6) ));  // 1.6 makes for 90 degrees roughly
 
 
   // BEST rotateX((-1* (1.6 * pitch)+(2.9+1.6) ));  // 1.6 makes for 90 degrees roughly
      
-     rotateX((-1* (1.6 * pitch)+(2.9+1.6) ));  // 1.6 makes for 90 degrees roughly
+     rotateX((-1* (1.6 * pitch)+(1.71+1.57) ));  // 1.57 makes for 90 degrees roughly
 
-
-
-
+// 31415
+// 1520500
+// 0050025
+// 1570525
 
   // rotateX(3*1.6);
 
   // nice for chair:
   // BEST:   rotateY((-1* (0.53 * (3.2 *  roll))+(1.55+1.6) ));
 
-     rotateY((-1* (0.53 * (3.2 *  roll))+(2.55+1.6) ));
+     rotateY((-1* (0.53 * (3.2 *  roll))+(1.05+1.6) ));
 
 
   // rotateX(radians(pitch)); // extrinsic rotation

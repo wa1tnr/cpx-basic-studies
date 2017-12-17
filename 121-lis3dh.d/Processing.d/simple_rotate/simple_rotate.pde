@@ -4,6 +4,9 @@
 
 // rocket.obj from the Processing Examples > Shape > LoadDisplayOBJ
 
+// HOLD the Circuit Playground Express level with the USB port to your LEFT.
+// Sight along the pb switches -- that's the pointy end of the rocket.
+
 // All three files required:
 // processing-2.2.1/modes/java/examples/Basics/Shape/LoadDisplayOBJ/data/rocket.mtl
 // processing-2.2.1/modes/java/examples/Basics/Shape/LoadDisplayOBJ/data/rocket.png
