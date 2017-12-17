@@ -1,0 +1,8 @@
+Processing.txt
+
+To load a sample 3D object you can rotate
+on X Y and Z, it's simply:
+
+  file > examples > shape > LoadDisplayOBJ
+
+Note the similarities to the Arduino IDE.
