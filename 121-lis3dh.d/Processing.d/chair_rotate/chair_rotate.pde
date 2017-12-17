@@ -123,16 +123,27 @@ void draw()
 
   // rotateZ(yaw * .04);  // if any Z use this for now.
 
-     rotateX((-1* (1.6 * pitch)+(3+1.6) ));  // 1.6 makes for 90 degrees roughly
+  //  rotateZ(1.2);  // odd result for chair
+  //  rotateZ(3.17); // chair flipped upside down, with other effects, perhaps
+   rotateZ(yaw);
+  // pre-chair (for rocket):
+  // rotateX((-1* (1.6 * pitch)+(3+1.6) ));  // 1.6 makes for 90 degrees roughly
+
+
+  // BEST rotateX((-1* (1.6 * pitch)+(2.9+1.6) ));  // 1.6 makes for 90 degrees roughly
+     
+     rotateX((-1* (1.6 * pitch)+(2.9+1.6) ));  // 1.6 makes for 90 degrees roughly
+
+
+
+
 
   // rotateX(3*1.6);
 
-  // Would like to roll it 90 clockwise:
-  
-  // rotateY((-1* (0.53 * (3.2 *  roll))+(3+1.6) )); // way BEST so far 00:45z Sun 17 Dec
+  // nice for chair:
+  // BEST:   rotateY((-1* (0.53 * (3.2 *  roll))+(1.55+1.6) ));
 
-     rotateY((-1* (0.53 * (3.2 *  roll))+(1.0+1.6) ));
-
+     rotateY((-1* (0.53 * (3.2 *  roll))+(2.55+1.6) ));
 
 
   // rotateX(radians(pitch)); // extrinsic rotation
@@ -162,8 +173,13 @@ void draw()
 //  shape(rocket, 100, 100, 80, 380);
 
 //                 n1   n2  n3   n4
-//  shape(rocket, -40, -40, 220, 440); // BEST  .. can mirror by negative n4
-    shape(chair, 15, 15, 190, 400);  // n4 is length related
+
+
+// BEST chair:   shape(chair, 15, 15, 190, 400);  // n4 is length related
+
+    shape(chair, 55, -55, 40, 50);  // n4 is length related
+
+
 //  shape(rocket);
 
 //  shape(rocket, 100, 100, 80, -460);
