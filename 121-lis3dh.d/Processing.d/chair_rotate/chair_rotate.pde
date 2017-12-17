@@ -1,8 +1,8 @@
-// Sun Dec 17 01:14:09 UTC 2017
+// Sun Dec 17 02:15:19 UTC 2017
 
 // Processing 2.2.1
 
-// rocket.obj from the Processing Examples > Shape > LoadDisplayOBJ
+// chair.obj is similar to rocket.obj from the Processing Examples > Shape > LoadDisplayOBJ
 
 // All three files required:
 // processing-2.2.1/modes/java/examples/Basics/Shape/LoadDisplayOBJ/data/rocket.mtl
@@ -10,6 +10,9 @@
 // processing-2.2.1/modes/java/examples/Basics/Shape/LoadDisplayOBJ/data/rocket.obj
 
 // place copies of them in the same directory as this simple_rotate.pde program file.
+
+// The CircuitPython code running on the CPX is exactly the same as
+// the simple_rotate sketch for Processing.  17 Dec 0216 UTC
 
 import processing.serial.*;
 import java.awt.datatransfer.*;
@@ -28,8 +31,6 @@ float yaw   = 0.0F;
 float temp  = 0.0F;
 float alt   = 0.0F;
 
-// OBJModel model;
-
 // Serial port state.
 Serial       port;
 final String serialConfigFile = "serialconfig.txt";
@@ -45,16 +46,9 @@ GCheckbox printSerialCheckbox;
 public void setup()
 {
 //  size(640, 480, OPENGL);
-
-//  size(1720, 820, P3D);
   size((1920-80), (1080-80), P3D);
 
   chair = loadShape("chair.obj");
-
-//  frameRate(30);
-//  model = new OBJModel(this);
-//  model.load("rocket.obj");
-//  model.scale(20);
   
   // Serial port setup.
   // Grab list of serial ports and choose one that was persisted earlier or default to the first port.
@@ -92,24 +86,21 @@ setSerialPort(serialList.getSelectedText());
  
 void draw()
 {
-//  background(0,0,0);
   background(0);
   lights();
-  // Set a new co-ordinate space
-  // pushMatrix();
 
   // Simple 3 point lighting for dramatic effect.
   // Slightly red light in upper right, slightly blue light in upper left, and white light from behind.
-     pointLight(255, 200, 200,  400, 400,  500);
-     pointLight(200, 200, 255, -400, 400,  500);
-     pointLight(255, 255, 255,    0,   0, -500);
+  //   pointLight(255, 200, 200,  400, 400,  500);
+  //   pointLight(200, 200, 255, -400, 400,  500);
+  //   pointLight(255, 255, 255,    0,   0, -500);
   
   // Move bunny from 0,0 in upper left corner to roughly center of screen.
-  // translate(300, 380, 0);
 
-  // translate(760, 460, -420);  // second-BEST
-  // translate(860, 340, 210);  // BEST
-  translate(960, 490, 410);  // establishes observing camera's location
+  // BEST chair: translate(960, 490, 410);  // establishes observing camera's location
+
+  translate(960, 540, 610);  // establishes observing camera's location
+
   // n3 seems related to how close to the object the camera is.
   // n1 and n2 seem related to x and y offset from a directly-behind perspective.
 
