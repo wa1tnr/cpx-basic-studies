@@ -1,0 +1,13 @@
+
+Adafruit_BNO055
+
+bunny.ino
+
+107   /* The processing sketch expects data as roll, pitch, heading */
+108   Serial.print(F("Orientation: "));
+109   Serial.print((float)event.orientation.x);
+110   Serial.print(F(" "));
+111   Serial.print((float)event.orientation.y);
+112   Serial.print(F(" "));
+113   Serial.print((float)event.orientation.z);
+114   Serial.println(F(""));
