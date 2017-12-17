@@ -40,8 +40,8 @@ OBJModel model;
 // Serial port state.
 Serial       port;
 final String serialConfigFile = "serialconfig.txt";
-// boolean      printSerial = false;
-boolean      printSerial = true;
+boolean      printSerial = false;
+// boolean      printSerial = true;
 // UI controls.
 GPanel    configPanel;
 GDropList serialList;
