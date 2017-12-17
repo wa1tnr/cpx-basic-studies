@@ -1,3 +1,16 @@
+// Sun Dec 17 01:14:09 UTC 2017
+
+// Processing 2.2.1
+
+// rocket.obj from the Processing Examples > Shape > LoadDisplayOBJ
+
+// All three files required:
+// processing-2.2.1/modes/java/examples/Basics/Shape/LoadDisplayOBJ/data/rocket.mtl
+// processing-2.2.1/modes/java/examples/Basics/Shape/LoadDisplayOBJ/data/rocket.png
+// processing-2.2.1/modes/java/examples/Basics/Shape/LoadDisplayOBJ/data/rocket.obj
+
+// place copies of them in the same directory as this simple_rotate.pde program file.
+
 import processing.serial.*;
 import java.awt.datatransfer.*;
 import java.awt.Toolkit;
