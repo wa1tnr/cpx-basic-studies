@@ -1,4 +1,6 @@
-// Sun Dec 17 02:24:12 UTC 2017
+// Sun Dec 17 09:29:32 UTC 2017
+
+// Seems to be about the best one can do with this kind of a Z axis. - 09:29:32 UTC on Sun 17 Dec 2017.
 
 // Processing 2.2.1
 
@@ -107,13 +109,14 @@ setSerialPort(serialList.getSelectedText());
 void draw()
 {
   background(33, 74, 101);
-  // lights();
+  // background(55, 55, 55);
+  lights();
 
   // Simple 3 point lighting for dramatic effect.
   // Slightly red light in upper right, slightly blue light in upper left, and white light from behind.
-     pointLight(255, 200, 200,  400, 400,  500);
-     pointLight(200, 200, 255, -400, 400,  500);
-     pointLight(255, 255, 255,    0,   0, -500);
+       pointLight(255, 200, 200,  400, 400,  500);
+       pointLight(200, 200, 255, -400, 400,  500);
+       pointLight(255, 255, 255,    0,   0, -500);
   
   // Move bunny from 0,0 in upper left corner to roughly center of screen.
 
@@ -144,11 +147,21 @@ void draw()
   //  rotateZ(3.17); // chair flipped upside down, with other effects, perhaps
  
   // - ----------------------------------------------
-
    // reenable 17 dec 0729z:
+      // Don't know what to do about this axis.
+
+   // PROBLEMATIC AXIS
+
+   //  rotateY(1*((yaw * 3.1415)+3.1415));
+     // that's about it for now. 17 Dec 08:29z.
+
+   // re-enable the above for a single-axis lagomorph.
    
-   // rotateZ(-1*(yaw+3.1415-1));
+   // neutered with a multiplier of 0.0001 to dull the effect considerably:
    
+  //   rotateY(0.0001*(1*((yaw * 3.1415)+3.1415)));
+
+
   // - ----------------------------------------------
   // pre-chair (for rocket):
   // rotateX((-1* (1.6 * pitch)+(3+1.6) ));  // 1.6 makes for 90 degrees roughly
@@ -159,9 +172,16 @@ void draw()
    
    // - ---------------------------------------------------------------
    // reenable 17 dec 0729z:  
-
+   // CERTIFIED SINGLE AXIS
+   // good if statement against yaw.  Commented out for simplification 17 Dec Sun 09:13z
+   if (yaw > 0) { // was > previous several iterations.  17 Dec 09:23z
       rotateX((-1* (1.6 * pitch)+(0.01) ));  // 1.57 makes for 90 degrees roughly
-
+   } else { // flip it
+      // this was commented-out in the singleton version:
+      rotateX((1* (1.6 * pitch)+(3.1415) ));  // 1.57 makes for 90 degrees roughly
+   }
+   // his left ear and his face are directed our way.  His head is to the left.
+   // he faces us.
 
    // - ---------------------------------------------------------------
 // 31415
@@ -174,10 +194,28 @@ void draw()
   // nice for chair:
   // BEST:   rotateY((-1* (0.53 * (3.2 *  roll))+(1.55+1.6) ));
 
-  // Now it rolls properly.  Maybe.  Rolls like an airplane, anyway.
-  
-     rotateZ((1* (0.53 * (3.2 *  roll))+(0.1) ));
 
+  // - ------------------------------------------------------
+  // Now it rolls properly.  Maybe.  Rolls like an airplane, anyway.
+  // reenable 17 Dec 07:46z:
+  // CERTIFIED SINGLE AXIS
+       // this is pitch in the real world:
+
+
+
+// new trial on if/yaw stuff 17 Dec 09:17z to see if other axis can do this as well.
+
+// YES IT CAN.  09:21z 17 Dec.  Probably not in tandem with the other, though.
+
+  // CLEAN // if (yaw > 0)
+  // CLEAN // {
+      rotateZ((1* (1.6 * roll)+(0.01) ));  // 1.57 makes for 90 degrees roughly
+  // CLEAN //  } else {
+  // CLEAN //  singleton //    rotateZ((-1* (1.6 * roll)+(3.1415) ));  // 1.57 makes for 90 degrees roughly
+  // CLEAN //  }
+
+
+  // - ---------------------------------------------------------
 
   // rotateX(radians(pitch)); // extrinsic rotation
   // rotateY(radians(yaw));
