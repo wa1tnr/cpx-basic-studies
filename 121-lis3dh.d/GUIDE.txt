@@ -52,6 +52,11 @@
   but it does belong, here!
 
 
+  Adafruit_BNO055-master/examples/bunny/processing/cuberotate/data/bunny.mtl
+  Adafruit_BNO055-master/examples/bunny/processing/cuberotate/data/bunny.obj
+
+
+
   HARDWARE
 
   Adafruit Circuit Playground Express.
@@ -188,7 +193,11 @@ drwxr-xr-x 8 wa1tnr    4096 Dec 17 03:43 ..
 -rw-r--r-- 1 wa1tnr     213 Apr 20  2017 bunny.mtl
 -rw-r--r-- 1 wa1tnr 5802942 Apr 20  2017 bunny.obj
 -rw-r--r-- 1 wa1tnr      96 Dec 17 03:42 bunny.obj_placeholder.txt
--rw-r--r-- 1 wa1tnr   21635 May 20  2014 bunny.png
+
+SEE:
+  Adafruit_BNO055-master/examples/bunny/processing/cuberotate/data/bunny.mtl
+  Adafruit_BNO055-master/examples/bunny/processing/cuberotate/data/bunny.obj
+
 -rw-r--r-- 1 wa1tnr    7032 Dec 17 04:09 bunny_rotate.pde
 -rw-r--r-- 1 wa1tnr      13 Dec 17 04:01 serialconfig.txt
 
@@ -246,13 +255,22 @@ total 156
 drwxr-xr-x 2 wa1tnr  4096 Dec 17 04:12 .
 drwxr-xr-x 8 wa1tnr  4096 Dec 17 03:43 ..
 -rw-r--r-- 1 wa1tnr   145 May 20  2014 rocket.mtl
+
+SEE:
+  processing-2.2.1/modes/java/examples/Basics/Shape/LoadDisplayOBJ/data/rocket.mtl
+  processing-2.2.1/modes/java/examples/Basics/Shape/LoadDisplayOBJ/data/rocket.obj
+  processing-2.2.1/modes/java/examples/Basics/Shape/LoadDisplayOBJ/data/rocket.png
+
 -rw-r--r-- 1 wa1tnr     7 Dec 17 01:20 rocket.mtl_placeholder.txt
 -rw-r--r-- 1 wa1tnr 44384 May 20  2014 rocket.obj
 -rw-r--r-- 1 wa1tnr     7 Dec 17 01:20 rocket.obj_placeholder.txt
--rw-r--r-- 1 wa1tnr 21635 May 20  2014 rocket.png
+-rw-r--r-- 1 wa1tnr 21635 May 20  2014 rocket.png 
 -rw-r--r-- 1 wa1tnr     7 Dec 17 01:20 rocket.png_placeholder.txt
+
 -rw-r--r-- 1 wa1tnr    13 Dec 17 04:12 serialconfig.txt
 -rw-r--r-- 1 wa1tnr  7452 Dec 17 04:12 simple_rotate.pde
+
+
 
 ./Processing.d/tools:
 total 12
