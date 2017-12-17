@@ -1,0 +1,261 @@
+
+  Sun Dec 17 04:57:01 UTC 2017
+
+  You will use lis3dh_bunny.py for this stunt.
+
+
+  Follow the instrux given for viewing the bunny sketch
+  in the 'Processing' environment:
+
+  https://www.adafruit.com/product/2472
+      https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor
+          https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor/arduino-code
+              https://github.com/adafruit/Adafruit_BNO055
+
+  SKIP/IGNORE: Download Adafruit_Sensor
+  SKIP/IGNORE: Adafruit Unified Sensor System
+  SKIP/IGNORE: rest of that page (arduino-code).  Just wanted the Adafruit_BNO055 since it has the bunny innit!
+
+  Pay attention to:
+  https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor/processing-test
+
+  Processing 2.2.1 used here for the wa1tnr lis3dh stuff.
+
+  Download and install some version of Processing.
+      https://processing.org/
+
+  You already have OBJLoader.zip since it was in Adafruit_BNO055.
+
+  Follow the skeleton provided by this github repo for where OBJLoader.zip contents belong:
+      ./121-lis3dh.d/Processing.d/libraries/OBJLoader/c0ffee
+
+      The c0ffee file itself was added and is extraneous.  Delete if you wish.
+
+  You will need to visit sourceforge for G4P:
+
+      https://sourceforge.net/projects/g4p/files/?source=navbar
+
+  Put those in:
+      ./121-lis3dh.d/Processing.d/libraries/G4P/c0ffee
+      of course the c0ffee file is just there to hold the door open for you...
+
+  At the end of this GUIDE.txt please find an (edited) ls -laR report
+  (recursive directory listing using /bin/ls in Linux).  Should give
+  you an idea of the overall structure.  Do not worry if you don't have
+  a given file.  Some you will not have.  They may be unimportant and/or
+  incidental to you.  Others are not sourced here, as they belong to
+  others and have their own license/what-have-you.  Use the original
+  (earlier) methods to obtain them.
+
+  For example, rocket.obj is found in the archive obtained from
+  processing.org.  So it's not here unless you installed it from there,
+  but it does belong, here!
+
+
+  HARDWARE
+
+  Adafruit Circuit Playground Express.
+
+  Maybe a pencil and a rubber band, to act as a pointy for the CPX board,
+  so you know where to aim it while you hold it in your hand.
+
+  Circuit Python has to be up and running.  v 2.1.0 I think is what
+  was present on the reference CPX board.
+
+  A Circuit Python program (main.py) runs on the target board (the CPX).
+  It simply tells things to the serial REPL that come over the USB serial
+  port.  Connect to it using any serial terminal program that you usually
+  use for this activity (putty in Windows; minicom or microcom in Linux,
+  and many others will all work).  Device is the usual /dev/ttyACM0 that
+  the CPX provides to your Linux box.  Windows people, MacOSX people will
+  find the device the way they always do.
+
+  You will use lis3dh_bunny.py for this stunt, as mentioned above. It's
+  what is talking out the serial port.  Somehow, processing.org is listening
+  and playing a bunny or a rocket or a chair to it.  Somehow.
+
+  Ouput values are a single sentence that begins with 'Orientation: '.
+
+  Sample output when lis3dh_bunny.py is running correctly:
+
+  Orientation: -0.031258 0.042979 0.992430
+
+  Orientation: -0.036142 0.044933 1.003174
+
+  Orientation: -0.033211 0.040049 1.004151
+
+  Orientation: -0.036142 0.043956 1.007081
+
+  Whitespace modified for this document; the real output is left-justified
+  (the 'O' in 'Orientation' is at left margin after a newline).
+
+  Should be pitch, roll, and inv (yaw) in that order -- check the source,
+  as it is authorative.  Values are 0.0 to about 1.01 or so, and can be
+  negatively signed.  It's an ascii string that somehow gets parsed rather
+  neatly.
+
+  'inv' is named since the Z axis is primarily useful to determine if the
+  aircraft/other object is inverted or not.  Or, if you like, if the coin
+  has landed heads or tails.  Or, if the buttered side of the toast landed
+  on the floor, or not.  If the deck of cards is face up, or face down.
+
+  Like that.
+
+  For fun, the Z axis was used (anyway) to move the bunny.
+
+
+$ ls -laR
+
+.:
+total 60
+drwxr-xr-x 4 wa1tnr 4096 Dec 17 04:27 .
+drwxr-xr-x 7 wa1tnr 4096 Dec 16 21:49 ..
+-rw-r--r-- 1 wa1tnr  369 Dec 16 22:08 bunny_ino_excerpt.txt
+-rw-r--r-- 1 wa1tnr 5226 Apr 20  2017 cuberotate.pde__Adafruit_BNO055
+-rw-r--r-- 1 wa1tnr 1379 Dec 17 04:27 GUIDE.txt
+-rw-r--r-- 1 wa1tnr 5893 Dec 16 22:30 lis3dh_bunny.py
+-rw-r--r-- 1 wa1tnr 4721 Dec 14 22:34 lis3dh__Demo.py
+-rw-r--r-- 1 wa1tnr 4721 Dec 14 22:34 lis3dh.py
+drwxr-xr-x 3 wa1tnr 4096 Dec 16 21:49 processing-2.2.1
+drwxr-xr-x 8 wa1tnr 4096 Dec 17 03:43 Processing.d
+-rw-r--r-- 1 wa1tnr  172 Dec 16 20:20 Processing.txt
+
+./processing-2.2.1:
+total 12
+drwxr-xr-x 3 wa1tnr 4096 Dec 16 21:49 .
+drwxr-xr-x 4 wa1tnr 4096 Dec 17 04:27 ..
+drwxr-xr-x 3 wa1tnr 4096 Dec 16 21:17 modes
+
+./processing-2.2.1/modes:
+total 12
+drwxr-xr-x 3 wa1tnr 4096 Dec 16 21:17 .
+drwxr-xr-x 3 wa1tnr 4096 Dec 16 21:49 ..
+drwxr-xr-x 3 wa1tnr 4096 Dec 16 21:17 java
+
+./processing-2.2.1/modes/java:
+total 12
+drwxr-xr-x 3 wa1tnr 4096 Dec 16 21:17 .
+drwxr-xr-x 3 wa1tnr 4096 Dec 16 21:17 ..
+drwxr-xr-x 3 wa1tnr 4096 Dec 16 21:17 examples
+
+./processing-2.2.1/modes/java/examples:
+total 12
+drwxr-xr-x 3 wa1tnr 4096 Dec 16 21:17 .
+drwxr-xr-x 3 wa1tnr 4096 Dec 16 21:17 ..
+drwxr-xr-x 3 wa1tnr 4096 Dec 16 21:17 Basics
+
+./processing-2.2.1/modes/java/examples/Basics:
+total 12
+drwxr-xr-x 3 wa1tnr 4096 Dec 16 21:17 .
+drwxr-xr-x 3 wa1tnr 4096 Dec 16 21:17 ..
+drwxr-xr-x 3 wa1tnr 4096 Dec 16 21:17 Shape
+
+./processing-2.2.1/modes/java/examples/Basics/Shape:
+total 12
+drwxr-xr-x 3 wa1tnr 4096 Dec 16 21:17 .
+drwxr-xr-x 3 wa1tnr 4096 Dec 16 21:17 ..
+drwxr-xr-x 3 wa1tnr 4096 Dec 16 21:17 LoadDisplayOBJ
+
+./processing-2.2.1/modes/java/examples/Basics/Shape/LoadDisplayOBJ:
+total 12
+drwxr-xr-x 3 wa1tnr 4096 Dec 16 21:17 .
+drwxr-xr-x 3 wa1tnr 4096 Dec 16 21:17 ..
+drwxr-xr-x 2 wa1tnr 4096 Dec 17 01:18 data
+
+./processing-2.2.1/modes/java/examples/Basics/Shape/LoadDisplayOBJ/data:
+total 20
+drwxr-xr-x 2 wa1tnr 4096 Dec 17 01:18 .
+drwxr-xr-x 3 wa1tnr 4096 Dec 16 21:17 ..
+-rw-r--r-- 1 wa1tnr    7 Dec 17 01:17 rocket.mtl_placeholder.txt
+-rw-r--r-- 1 wa1tnr    7 Dec 17 01:17 rocket.obj_placeholder.txt
+-rw-r--r-- 1 wa1tnr    7 Dec 17 01:17 rocket.png_placeholder.txt
+
+./Processing.d:
+total 32
+drwxr-xr-x 8 wa1tnr 4096 Dec 17 03:43 .
+drwxr-xr-x 4 wa1tnr 4096 Dec 17 04:27 ..
+drwxr-xr-x 2 wa1tnr 4096 Dec 17 04:09 bunny_rotate
+drwxr-xr-x 2 wa1tnr 4096 Dec 17 02:17 chair_rotate
+drwxr-xr-x 4 wa1tnr 4096 Dec 17 01:19 libraries
+drwxr-xr-x 2 wa1tnr 4096 Dec 17 01:19 modes
+drwxr-xr-x 2 wa1tnr 4096 Dec 17 04:12 simple_rotate
+drwxr-xr-x 2 wa1tnr 4096 Dec 17 01:20 tools
+
+./Processing.d/bunny_rotate:
+total 5732
+drwxr-xr-x 2 wa1tnr    4096 Dec 17 04:09 .
+drwxr-xr-x 8 wa1tnr    4096 Dec 17 03:43 ..
+-rw-r--r-- 1 wa1tnr     213 Apr 20  2017 bunny.mtl
+-rw-r--r-- 1 wa1tnr 5802942 Apr 20  2017 bunny.obj
+-rw-r--r-- 1 wa1tnr      96 Dec 17 03:42 bunny.obj_placeholder.txt
+-rw-r--r-- 1 wa1tnr   21635 May 20  2014 bunny.png
+-rw-r--r-- 1 wa1tnr    7032 Dec 17 04:09 bunny_rotate.pde
+-rw-r--r-- 1 wa1tnr      13 Dec 17 04:01 serialconfig.txt
+
+./Processing.d/chair_rotate:
+total 180
+drwxr-xr-x 2 wa1tnr  4096 Dec 17 02:17 .
+drwxr-xr-x 8 wa1tnr  4096 Dec 17 03:43 ..
+-rw-r--r-- 1 wa1tnr 16607 May 20  2014 chair.obj
+-rw-r--r-- 1 wa1tnr     7 Dec 17 01:36 chair.obj_placeholder.txt
+-rw-r--r-- 1 wa1tnr  7511 Dec 17 02:17 chair_rotate.pde
+-rw-r--r-- 1 wa1tnr    13 Dec 17 04:09 serialconfig.txt
+
+./Processing.d/libraries:
+total 20
+drwxr-xr-x 4 wa1tnr 4096 Dec 17 01:19 .
+drwxr-xr-x 8 wa1tnr 4096 Dec 17 03:43 ..
+-rw-r--r-- 1 wa1tnr   29 Dec 17 01:19 c0ffee
+drwxr-xr-x 6 wa1tnr 4096 Dec 17 01:39 G4P
+drwx------ 6 wa1tnr 4096 Dec 17 01:40 OBJLoader
+
+./Processing.d/libraries/G4P:
+total 32
+drwxr-xr-x  6 wa1tnr 4096 Dec 17 01:39 .
+drwxr-xr-x  4 wa1tnr 4096 Dec 17 01:19 ..
+-rw-r--r--  1 wa1tnr   29 Dec 17 01:39 c0ffee
+drwxr-xr-x 23 wa1tnr 4096 Jan 16  2015 examples
+drwxr-xr-x  2 wa1tnr 4096 Jan 16  2015 library
+-rw-r--r--  1 wa1tnr 2488 Jan 16  2015 library.properties
+drwxr-xr-x  4 wa1tnr 4096 Jan 16  2015 reference
+drwxr-xr-x  4 wa1tnr 4096 Jan 16  2015 src
+
+
+./Processing.d/libraries/OBJLoader:
+total 40
+drwx------  6 wa1tnr 4096 Dec 17 01:40 .
+drwxr-xr-x  4 wa1tnr 4096 Dec 17 01:19 ..
+-rw-r--r--  1 wa1tnr   29 Dec 17 01:40 c0ffee
+-rw-r--r--  1 wa1tnr 6148 Jan  5  2012 .DS_Store
+drwxr-xr-x 11 wa1tnr 4096 Aug 17  2010 examples
+drwxr-xr-x  2 wa1tnr 4096 Jan  5  2012 library
+-rw-r--r--  1 wa1tnr 2122 Jan  5  2012 library.properties
+drwxr-xr-x  4 wa1tnr 4096 Jan  5  2012 reference
+drwxr-xr-x  3 wa1tnr 4096 Aug 17  2010 src
+
+
+
+./Processing.d/modes:
+total 12
+drwxr-xr-x 2 wa1tnr 4096 Dec 17 01:19 .
+drwxr-xr-x 8 wa1tnr 4096 Dec 17 03:43 ..
+-rw-r--r-- 1 wa1tnr   29 Dec 17 01:20 c0ffee
+
+./Processing.d/simple_rotate:
+total 156
+drwxr-xr-x 2 wa1tnr  4096 Dec 17 04:12 .
+drwxr-xr-x 8 wa1tnr  4096 Dec 17 03:43 ..
+-rw-r--r-- 1 wa1tnr   145 May 20  2014 rocket.mtl
+-rw-r--r-- 1 wa1tnr     7 Dec 17 01:20 rocket.mtl_placeholder.txt
+-rw-r--r-- 1 wa1tnr 44384 May 20  2014 rocket.obj
+-rw-r--r-- 1 wa1tnr     7 Dec 17 01:20 rocket.obj_placeholder.txt
+-rw-r--r-- 1 wa1tnr 21635 May 20  2014 rocket.png
+-rw-r--r-- 1 wa1tnr     7 Dec 17 01:20 rocket.png_placeholder.txt
+-rw-r--r-- 1 wa1tnr    13 Dec 17 04:12 serialconfig.txt
+-rw-r--r-- 1 wa1tnr  7452 Dec 17 04:12 simple_rotate.pde
+
+./Processing.d/tools:
+total 12
+drwxr-xr-x 2 wa1tnr 4096 Dec 17 01:20 .
+drwxr-xr-x 8 wa1tnr 4096 Dec 17 03:43 ..
+-rw-r--r-- 1 wa1tnr   29 Dec 17 01:20 c0ffee
