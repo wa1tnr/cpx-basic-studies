@@ -1,0 +1,3 @@
+This is an Adafruit file: bunny.mtl
+
+Please download the original elsewhere.  It's an Adafruit thing.
