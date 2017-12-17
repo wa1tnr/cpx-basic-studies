@@ -1,0 +1,3 @@
+This is a big file: bunny.obj
+
+Please download the original elsewhere.  It's an Adafruit thing.
