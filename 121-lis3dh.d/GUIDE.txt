@@ -207,6 +207,10 @@ drwxr-xr-x 2 wa1tnr  4096 Dec 17 02:17 .
 drwxr-xr-x 8 wa1tnr  4096 Dec 17 03:43 ..
 -rw-r--r-- 1 wa1tnr 16607 May 20  2014 chair.obj
 -rw-r--r-- 1 wa1tnr     7 Dec 17 01:36 chair.obj_placeholder.txt
+
+SEE:
+  processing-2.2.1/modes/java/examples/Books/Processing Handbook/Extensions/3D/Ex_05/data/chair.obj
+
 -rw-r--r-- 1 wa1tnr  7511 Dec 17 02:17 chair_rotate.pde
 -rw-r--r-- 1 wa1tnr    13 Dec 17 04:09 serialconfig.txt
 
