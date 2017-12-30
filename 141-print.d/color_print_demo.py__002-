@@ -3,7 +3,8 @@
 # developed on CPX - likely to work on all CircuitPython hardware
 
 import time
-counter = 4
+
+counter = 0
 
 # ------------------------
 print("pelle conq caa42")
@@ -77,8 +78,8 @@ def signon():
 # ---------------- end question -----------------
 
 def looping():
+    counter = 0
     while True:
-        global counter
         say_things()
         counter = counter + 1
         time.sleep(0.28)
