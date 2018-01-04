@@ -22,12 +22,12 @@ def clrtoeol(): # clear to end of line )
 
 def cur_up(): # move cursor up by n lines )
     ansi_escape()
-    print("1", end='',) # example: move cursor up by 5 lines
+    print("1", end='',) # example: move cursor up by 1 line
     print("A", end='',)
 
 def cur_down(): # n -- | move cursor down by n lines )
     ansi_escape()
-    print("1", end='',) # example: move cursor up by 5 lines
+    print("1", end='',) # example: move cursor up by 1 line
     print("B", end='',)
 
 def demo(): # show recent new command in action
