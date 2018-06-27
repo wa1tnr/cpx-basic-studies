@@ -1,6 +1,10 @@
 
   Sun Dec 17 04:57:01 UTC 2017
 
+  refresh:
+
+  Tue 26 Jun 19:53:14 UTC 2018
+
   You will use lis3dh_bunny.py for this stunt.
 
 
@@ -18,6 +22,9 @@
 
   Pay attention to:
   https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor/processing-test
+  https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor/processing-test#requirements
+
+
 
   Processing 2.2.1 used here for the wa1tnr lis3dh stuff.
 
@@ -42,6 +49,8 @@
 
   Follow the skeleton provided by this github repo for where OBJLoader.zip contents belong:
       ./121-lis3dh.d/Processing.d/libraries/OBJLoader/c0ffee
+
+  2018 June note:  'Processing.d' seems to have become 'processing'.
 
       The c0ffee file itself was added and is extraneous.  Delete if you wish.
 
